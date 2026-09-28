@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tv-up: #089981;
+  --color-tv-up-bg: #e6f7f4;
+  --color-tv-down: #f23645;
+  --color-tv-down-bg: #fdecee;
+  --color-tv-border: #e0e3eb;
+  --color-tv-border-subtle: #f0f3fa;
+  --color-tv-muted: #6a6d78;
+  --color-tv-dark: #131722;
+  --color-tv-pill: #f0f3f8;
+  --color-tv-pill-hover: #e3e6ed;
+  --color-tv-blue: #2962ff;
+  --color-tv-blue-hover: #1e53e5;
+
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Trebuchet MS", Roboto, Ubuntu, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    background-color: #ffffff;
+    color: #131722;
+  }
+}
+
+/* Custom scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.row-hover:hover {
+  background-color: #f8f9fd;
+}
+
+/* Subtle price tick pulse animation */
+@keyframes flashGreen {
+  0% { background-color: rgba(8, 153, 129, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes flashRed {
+  0% { background-color: rgba(242, 54, 69, 0.2); }
+  100% { background-color: transparent; }
+}
+
+.flash-up {
+  animation: flashGreen 0.8s ease-out;
+}
+
+.flash-down {
+  animation: flashRed 0.8s ease-out;
+}
